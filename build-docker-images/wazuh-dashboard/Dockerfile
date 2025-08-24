@@ -9,6 +9,7 @@ ARG INSTALL_DIR=/usr/share/wazuh-dashboard
 # Update and install dependencies
 RUN yum install curl-minimal libcap openssl -y
 
+COPY shared /shared
 COPY config/check_repository.sh /
 RUN chmod 775 /check_repository.sh && \
     source /check_repository.sh

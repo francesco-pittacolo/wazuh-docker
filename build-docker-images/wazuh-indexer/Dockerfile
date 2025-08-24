@@ -6,6 +6,7 @@ ARG WAZUH_TAG_REVISION
 
 RUN yum install curl-minimal openssl xz tar findutils shadow-utils -y
 
+COPY shared /shared
 COPY config/check_repository.sh /
 RUN chmod 775 /check_repository.sh && \
     source /check_repository.sh
